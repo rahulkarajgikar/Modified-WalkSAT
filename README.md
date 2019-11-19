@@ -9,21 +9,6 @@ WalkSAT original algorithm:
 
 ![alt text](https://raw.githubusercontent.com/rahulkarajgikar/Modified-WalkSAT/master/walksat.png)
 
-**function** WALKSAT(*clauses, p, max_flips*) **returns** a satisfying model or *failure*
-
-&nbsp;&nbsp;**inputs:** *clauses* , a set of clauses in propositional logic   
-&nbsp;&nbsp;*p*, the probability of choosing to do a “random walk” move, typically around 0.5 
-&nbsp;&nbsp;*max_flips* , number of flips allowed before  giving up
-    
-&nbsp;&nbsp;*model* ← a random assignment of *true/false* to the symbols in *clauses*
-&nbsp;&nbsp;**for** *i* = 1 **to** *max_flips* **do**  
-&nbsp;&nbsp;&nbsp;&nbsp;**if** *model* satisfies *clauses* **then return** *model*
-
-&nbsp;&nbsp;&nbsp;&nbsp;clause ← a randomly selected clause from *clauses* that is *false* in *model*
-&nbsp;&nbsp;&nbsp;&nbsp;**with probability** *p* flip the value in *model* of a randomly selected symbol from *clause* 
-&nbsp;&nbsp;&nbsp;&nbsp;**else** flip whichever symbol in *clause* maximizes the number of satisfied clauses    
-**return** *failure*
-
 modwalksat.cpp attempts to modify walksat by adding a variable *v*, that iterates from 1 to *maxv*.
 At each stage, instead of flipping one symbol to maximise the number of satisfied clauses,like in WalkSAT, flip *v* symbols.
 Each *v* runs for *maxit* iterations
