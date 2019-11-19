@@ -7,6 +7,8 @@ To execute, clone the directory, and then run exec.sh
 
 WalkSAT original algorithm:
 
+![Alt text](./walksat.png?raw=true "Title")
+
 **function** WALKSAT(*clauses, p, max_flips*) **returns** a satisfying model or *failure*
 
 &nbsp;&nbsp;**inputs:** *clauses* , a set of clauses in propositional logic   
