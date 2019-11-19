@@ -9,7 +9,7 @@ WalkSAT original algorithm:
 
 ![alt text](https://raw.githubusercontent.com/rahulkarajgikar/Modified-WalkSAT/master/walksat.png)
 
-modwalksat.cpp attempts to modify walksat by adding a variable *v*, that iterates from 1 to *maxv*.
+modwalksat.cpp attempts to modify WalkSAT by adding a variable *v*, that iterates from 1 to *maxv*.
 At each stage, instead of flipping one symbol to maximise the number of satisfied clauses,like in WalkSAT, flip *v* symbols.
 Each *v* runs for *maxit* iterations
 This will make the algorithm behave like WalkSAT for the first iteration, but after not finding a solution, it will start flipping more and more variables to get closer to the solution.
