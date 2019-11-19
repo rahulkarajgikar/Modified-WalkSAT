@@ -8,16 +8,18 @@ To execute, clone the directory, and then run exec.sh
 WalkSAT original algorithm:
 
 **function** WALKSAT(*clauses, p, max_flips*) **returns** a satisfying model or *failure*
-  **inputs:** *clauses* , a set of clauses in propositional logic   
-            *p*, the probability of choosing to do a “random walk” move, typically around 0.5 
-            *max_flips* , number of flips allowed before  giving up
+
+&nbsp;&nbsp;**inputs:** *clauses* , a set of clauses in propositional logic   
+&nbsp;&nbsp;*p*, the probability of choosing to do a “random walk” move, typically around 0.5 
+&nbsp;&nbsp;*max_flips* , number of flips allowed before  giving up
     
-  *model* ← a random assignment of *true/false* to the symbols in *clauses*
-  **for** *i* = 1 **to** *max_flips* **do**  
-  **if** *model* satisfies *clauses* **then return** *model*
-  clause ← a randomly selected clause from *clauses* that is *false* in *model*
-  **with probability** *p* flip the value in *model* of a randomly selected symbol from *clause* 
-  **else** flip whichever symbol in *clause* maximizes the number of satisfied clauses    
+&nbsp;&nbsp;*model* ← a random assignment of *true/false* to the symbols in *clauses*
+&nbsp;&nbsp;**for** *i* = 1 **to** *max_flips* **do**  
+&nbsp;&nbsp;&nbsp;&nbsp;**if** *model* satisfies *clauses* **then return** *model*
+
+&nbsp;&nbsp;&nbsp;&nbsp;clause ← a randomly selected clause from *clauses* that is *false* in *model*
+&nbsp;&nbsp;&nbsp;&nbsp;**with probability** *p* flip the value in *model* of a randomly selected symbol from *clause* 
+&nbsp;&nbsp;&nbsp;&nbsp;**else** flip whichever symbol in *clause* maximizes the number of satisfied clauses    
 **return** *failure*
 
 modwalksat.cpp attempts to modify walksat by adding a variable *v*, that iterates from 1 to *maxv*.
